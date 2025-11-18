@@ -1,0 +1,35 @@
+/* Fonts ------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.heading {
+  font-family: Roboto, sans-serif;
+  font-style: italic;
+  font-weight: 900;
+}
+
+#gallery {
+  color: crimson;
+}
+
+.primary-color {
+  color: darkgreen;
+}
+
+.border-1 {
+  border: 2px solid #333;
+  padding: 10px;
+}
+
+#about {
+  background-color: pink;
+}
+
+#contact {
+  padding: 0;
+  background: url('../images/contact-road.jpg') bottom/cover no-repeat;
+}
+
+.light-overlay {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+}
