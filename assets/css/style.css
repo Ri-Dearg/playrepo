@@ -7,12 +7,25 @@
   font-weight: 900;
 }
 
-#gallery {
-  color: crimson;
+/* Colors ------------------------------------- */
+.primary-color {
+  color: #a3d9ff;
 }
 
-.primary-color {
-  color: darkgreen;
+.primary-background {
+  background-color: #a3d9ff;
+}
+
+.secondary-color {
+  color: #96e6b3;
+}
+
+.third-color {
+  color: #7e6b8f;
+}
+
+#gallery {
+  color: crimson;
 }
 
 .border-1 {
