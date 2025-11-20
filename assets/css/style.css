@@ -24,6 +24,29 @@
   color: #7e6b8f;
 }
 
+/* Navbar ------------------------------------- */
+header {
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+ul {
+  padding: 0;
+}
+
+.list-nostyle {
+  list-style-type: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
 #gallery {
   color: crimson;
 }
