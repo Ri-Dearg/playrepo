@@ -1,10 +1,23 @@
-body {
-  margin: 0;
-}
+/* Commented out code is left present for example's sake. */
+/* Import Fonts -------------------------------- */
 
-/* Fonts ------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Base Style ------------------------------------- */
+
+:root {
+  --bs-secondary-color: #96e6b3;
+  --bs-secondary-rgb: 150, 230, 179;
+  --bs-secondary-bg: #96e6b3;
+  --bs-secondary-bg-rgb: 150, 230, 179;
+}
+
+/* 
+body {
+  margin: 0;
+} */
+
+/* Fonts ------------------------------------- */
 .heading {
   font-family: Roboto, sans-serif;
   font-style: italic;
@@ -28,6 +41,23 @@ body {
   color: #7e6b8f;
 }
 
+/* .btn-secondary {
+  background-color: pink;
+  color: black;
+} */
+
+.btn-secondary {
+  --bs-btn-bg: var(--bs-secondary-bg);
+  --bs-btn-border-color: var(--bs-secondary-bg);
+  --bs-btn-color: #000;
+
+  --bs-btn-hover-bg: #7cd49f;
+  --bs-btn-hover-border-color: #7cd49f;
+
+  --bs-btn-active-bg: #6cc08f;
+  --bs-btn-active-border-color: #6cc08f;
+}
+
 /* Navbar ------------------------------------- */
 header {
   align-items: center;
@@ -48,25 +78,24 @@ ul {
   list-style-type: none;
 }
 
+/* Page Sections ------------------------------------- */
+
 #gallery {
   color: crimson;
 }
 
-.border-1 {
-  border: 2px solid #333;
-  padding: 10px;
-}
-
-#about {
+/* #about {
   background-color: pink;
-}
+} */
 
 #contact {
-  padding: 0;
   background: url('../images/contact-road.jpg') bottom/cover no-repeat;
 }
 
 .light-overlay {
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
+
+/* input {
+  max-width: 400px;
+} */
