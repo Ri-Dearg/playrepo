@@ -48,10 +48,6 @@ ul {
   list-style-type: none;
 }
 
-.d-flex {
-  display: flex;
-}
-
 #gallery {
   color: crimson;
 }
