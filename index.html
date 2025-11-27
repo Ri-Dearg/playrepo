@@ -43,7 +43,7 @@
 
     <!-- Main  -------------------------------------------------->
     <main>
-      <section class="border-1">
+      <section class="container-fluid">
         <h2 class="heading" id="gallery">Gallery</h2>
         <section>
           <h3 class="heading">Waterpark</h3>
@@ -53,41 +53,67 @@
         </section>
       </section>
 
-      <section class="border-1" id="about">
-        <h2 class="heading primary-color">About the Trip!</h2>
-        <a
-          href="https://www.w3schools.com/tags/tag_strong.asp"
-          target="_blank"
-          rel="noopener noreferrer"
-          >W3Schools</a
-        >
-        <p class="primary-color">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          <strong>Nesciunt, provident quidem</strong>, optio labore lilo
-          corporis repudiandae eius quasi laborum voluptatem similique molestiae
-          eligendi vel! Nihli lilo facilis magnam nostrum dolores?
-        </p>
-
-        <h3>Leave no Trace!</h3>
-        <ol>
-          <li>Clean up after yourself.</li>
-          <li>Don't walk off the path.</li>
-        </ol>
+      <section class="container-fluid" id="about">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h2 class="heading">About the Trip!</h2>
+            <a
+              href="https://www.w3schools.com/tags/tag_strong.asp"
+              target="_blank"
+              rel="noopener noreferrer"
+              >W3Schools</a
+            >
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              <strong>Nesciunt, provident quidem</strong>, optio labore lilo
+              corporis repudiandae eius quasi laborum voluptatem similique
+              molestiae eligendi vel! Nihli lilo facilis magnam nostrum dolores?
+            </p>
+          </div>
+          <div class="col-12 col-md-6">
+            <h3>Leave no Trace!</h3>
+            <ol>
+              <li>Clean up after yourself.</li>
+              <li>Don't walk off the path.</li>
+            </ol>
+          </div>
+        </div>
       </section>
 
-      <section class="border-1" id="contact">
-        <div class="light-overlay">
-          <h2 class="heading">Contact</h2>
-          <form method="post" action="contact.html">
-            <label for="name">Name:</label>
-            <input id="name" type="text" name="name" required><br>
-            <label for="emali">Emali:</label>
-            <input id="emali" type="emali" name="emali" required><br>
-            <label for="message">Message:</label>
-            <textarea cols="30" rows="5" placeholder="Message Here."></textarea
-            ><br>
-            <input type="submit" value="Sign Up!">
-          </form>
+      <section class="container-fluid" id="contact">
+        <div class="row justify-content-center light-overlay">
+          <div class="col-12">
+            <h2 class="heading">Contact</h2>
+          </div>
+          <div class="col-12 col-md-8 col-xl-4">
+            <form method="post" action="contact.html">
+              <label class="form-label" for="emailContact">Email:</label>
+              <input
+                class="form-control"
+                id="emailContact"
+                type="email"
+                aria-describedby="emailHelp"
+                required>
+              <div class="form-text text-primary" id="emailHelp">
+                We'll never share your email with anyone else.
+              </div>
+              <div class="form-floating">
+                <input
+                  class="form-control"
+                  id="nameContact"
+                  type="text"
+                  placeholder="Full Name"
+                  required>
+                <label for="nameContact">Name</label>
+              </div>
+              <label class="form-label" for="textAreaContact">Message:</label>
+              <textarea
+                class="form-control"
+                id="textAreaContact"
+                rows="3"></textarea>
+              <input class="btn btn-secondary" type="submit" value="Sign Up!">
+            </form>
+          </div>
         </div>
       </section>
     </main>
