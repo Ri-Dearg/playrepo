@@ -30,7 +30,7 @@ body {
 }
 
 .primary-background {
-  background-color: #a3d9ff;
+  background-color: #5b7c94ff;
 }
 
 .secondary-color {
@@ -60,11 +60,12 @@ body {
 
 /* Navbar ------------------------------------- */
 header {
+  background-color: #7da6d5ff ;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 0 1rem;
-}
+  }
 
 nav li {
   margin: 0 10px;
