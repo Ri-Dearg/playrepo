@@ -51,6 +51,7 @@ let score = 0;
 function updateButton(button) {
     // Loop through questions array, using the index to access the questions
     button.innerText = `${questions[questionIndex].answers[i].answer} ${i + 1}`;
+    button.classList.remove('secondary-color');
     button.disabled = false;
 }
 
