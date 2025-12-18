@@ -1,6 +1,6 @@
 // Declaring variables
 const doesNotChange = 'Const means the value remains the same.';
-let canChange = 'let mean the value can change.';
+let canChange = 'let means the value can change.';
 
 // Common Data Types
 let number1 = 10;
@@ -8,6 +8,8 @@ let number2 = 10.5;
 let string1 = 'This is a string';
 let boolean1 = true;
 let boolean2 = false;
+let noValue; // undefined
+let nullValue = null;
 
 /* A series of values accessed with an index,
 best when the values have the same type/structure */
@@ -41,24 +43,22 @@ function changeInnerText() {
 // Using parameters allows us to change values used in functions
 function changeElementsInnerText(elementArray, newText) {
     /* loop through the array. 
-  i begins at zero
-  loop will run as long as the number is smaller than the array length
-  i will increase at the end of each loop */
+    i begins at zero
+    loop will run as long as the number is smaller than the array length
+    i will increase at the end of each loop */
     for (i = 0; i < elementArray.length; i++) {
-        console.log(elementArray[i]);
+        // console.log(elementArray[i]);
         elementArray[i].innerText = `${newText}`;
     }
 }
 
-console.dir(cards);
-
 // Alternative methods to loop through arrays
 for (let card of cards) {
-    console.log(card);
+    // console.log(card);
 }
 
 Array.from(cards).forEach((element) => {
-    console.log(element);
+    // console.log(element);
 });
 
 // call a function on a click
@@ -79,4 +79,11 @@ placeholderButton.addEventListener('click', () => {
 debugger;
 
 // Call the function using parameters
-changeElementsInnerText(cards, 'Text has changed');
+// changeElementsInnerText(cards, 'Text has changed');
+
+placeholderButton.addEventListener('click', () => {
+    const cards2 = document.getElementsByClassName('card-text');
+    cards2.myNewProperty = { key1: 'test', key2: 500 };
+    console.log(cards2.myNewProperty.key1, cards2.myNewProperty.key2);
+    changeElementsInnerText(cards2, 'Text has changed');
+});
