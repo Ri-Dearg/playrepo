@@ -6,44 +6,44 @@
 */
 
 header {
-  background-color: rgb(0, 78, 97);
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  padding: 0 1rem;
+    background-color: rgb(0, 78, 97);
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 1rem;
 }
 
 #contact {
-  background: url('../images/contact-road.jpg') bottom/cover no-repeat;
+    background: url('../images/contact-road.jpg') bottom/cover no-repeat;
 }
 
 .light-overlay {
-  background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .footer-spacer {
-  min-height: 92vh;
+    min-height: 92vh;
 }
 
 #footer {
-  background-color: rgb(0, 78, 97);
+    background-color: rgb(0, 78, 97);
 }
 
 #footer * {
-  color: white;
+    color: white;
 }
 
 .primary-background {
-  background-color: #5b7c94ff;
+    background-color: #5b7c94ff;
 }
 
 .secondary-color {
-  background-color: #96e6b3;
+    background-color: #96e6b3 !important;
 }
 
 /* #footer svg {
