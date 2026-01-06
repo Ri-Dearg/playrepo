@@ -1,110 +1,136 @@
 // One option for a question data structure - an array of objects
 const questions = [
     {
-        question: 'This is question 1?',
+        question: "This is question 1?",
         answers: [
-            { answer: 'Answer from array', correct: false },
-            { answer: 'Answer from array t', correct: true },
-            { answer: 'Answer from array', correct: false },
-            { answer: 'Answer from array', correct: false },
+            { answer: "Answer from array", correct: false },
+            { answer: "Answer from array t", correct: true },
+            { answer: "Answer from array", correct: false },
+            { answer: "Answer from array", correct: false },
         ],
     },
     {
-        question: 'This is question 2?',
+        question: "This is question 2?",
         answers: [
-            { answer: 'Answer from array', correct: false },
-            { answer: 'Answer from array t', correct: true },
-            { answer: 'Answer from array', correct: false },
-            { answer: 'Answer from array', correct: false },
+            { answer: "Answer from array", correct: false },
+            { answer: "Answer from array t", correct: true },
+            { answer: "Answer from array", correct: false },
+            { answer: "Answer from array", correct: false },
         ],
     },
     {
-        question: 'This is question 3?',
+        question: "This is question 3?",
         answers: [
-            { answer: 'Answer from array', correct: false },
-            { answer: 'Answer from array t', correct: true },
-            { answer: 'Answer from array', correct: false },
-            { answer: 'Answer from array', correct: false },
+            { answer: "Answer from array", correct: false },
+            { answer: "Answer from array t", correct: true },
+            { answer: "Answer from array", correct: false },
+            { answer: "Answer from array", correct: false },
         ],
     },
     {
-        question: 'This is question 4?',
+        question: "This is question 4?",
         answers: [
-            { answer: 'Answer from array', correct: false },
-            { answer: 'Answer from array t', correct: true },
-            { answer: 'Answer from array', correct: false },
-            { answer: 'Answer from array', correct: false },
+            { answer: "Answer from array", correct: false },
+            { answer: "Answer from array t", correct: true },
+            { answer: "Answer from array", correct: false },
+            { answer: "Answer from array", correct: false },
         ],
     },
 ];
 
 // Declare constants
-const startButton = document.getElementById('startQuiz');
-const instructions = document.getElementById('instructionSection');
-const questionsBox = document.getElementById('questionsBox');
-const answerButtons = document.getElementsByClassName('answerBtn');
-const question = document.getElementById('question');
-const nextButton = document.getElementById('nextQuestion');
+const startButton = document.getElementById("startQuiz");
+const instructions = document.getElementById("instructionSection");
+const questionsBox = document.getElementById("questionsBox");
+const questionEl = document.getElementById("question");
+const nextButton = document.getElementById("nextQuestion");
+// the ... spread operator expands an list/array-like item into an array for easy use of array methods later.
+const answerButtons = [...document.getElementsByClassName("answerBtn")];
+
+// Variables that will change.
 let questionIndex = 0;
 let score = 0;
+// Control the question state for double clicks.
+let hasAnswered = false;
 
-function updateButton(button) {
-    // Loop through questions array, using the index to access the questions
-    button.innerText = `${questions[questionIndex].answers[i].answer} ${i + 1}`;
-    button.classList.remove('secondary-color');
-    button.disabled = false;
-}
+// Declare functions
 
-function nextButtonEvent() {
-    nextButton.classList.remove('d-none');
-    nextButton.addEventListener('click', () => {
-        // Order matters, first make the changes to hidden elements on the page
-        question.innerText = questions[questionIndex].question;
-        for (i = 0; i < answerButtons.length; i++) {
-            updateButton(answerButtons[i]);
-        }
+// Renders the question in UI, does not mix game logic with UI elements.
+
+/**
+ * Updates the DOM to display the current question and its potential answers.
+ * Resets the UI state for the new question, including button styles and visibility.
+ * * @returns {void}
+ */
+function renderQuestion() {
+    const current = questions[questionIndex];
+
+    questionEl.innerText = current.question;
+    nextButton.classList.add("d-none");
+    hasAnswered = false;
+
+    current.answers.forEach((answer, i) => {
+        const btn = answerButtons[i];
+        btn.innerText = answer.answer;
+        btn.classList.remove("secondary-color");
+        btn.disabled = false;
     });
 }
 
-function disableButtons() {
-    for (let button of answerButtons) {
-        button.disabled = true;
-    }
-    nextButtonEvent();
+// Game logic
+
+/**
+ * Handles the logic when a user selects an answer.
+ * Validates the selection, updates the score, and toggles UI feedback.
+ * * @param {number} index - The index of the selected answer within the current question's answer array.
+ * @returns {void}
+ */
+function selectAnswer(index) {
+    // Prevent double clicks based on variable. Ends code here.
+    if (hasAnswered) return;
+
+    // If hasAnswered is false, set to true first to prevent further interaction.
+    hasAnswered = true;
+    const selected = questions[questionIndex].answers[index];
+
+    answerButtons[index].classList.add("secondary-color");
+    // Disable buttons
+    answerButtons.forEach((btn) => (btn.disabled = true));
+    // Show next button
+    nextButton.classList.remove("d-none");
+
+    // increment score if correct
+    if (selected.correct) score++;
 }
 
-function isCorrect(i) {
-    console.log(i);
-    console.log(questions[questionIndex].answers);
+/**
+ * Advances the quiz to the next step.
+ * Increments the question counter and determines whether to show a new question or the final results.
+ * * @returns {void}
+ */
+function nextQuestion() {
+    // increment question for next round
+    questionIndex++;
+
+    // Ternary operator with boolean expression
+
+    // Is the questionIndex less than the length?
+    questionIndex < questions.length
+        ? // If it is less, render the next question
+          renderQuestion()
+        : // Else, show alert
+          alert(`Quiz Finished! Score: ${score}`);
 }
 
-function answerClick(button, index) {
-    button.addEventListener('click', function (e) {
-        e.target.classList.add('secondary-color');
-        disableButtons();
-        if (questions[questionIndex].answers[index].correct) {
-            score++;
-        }
-        console.log(score);
-        questionIndex++;
-    });
-}
+// Add event listeners onces
+answerButtons.forEach((btn, i) =>
+    btn.addEventListener("click", () => selectAnswer(i))
+);
 
-function showAnswers() {
-    for (i = 0; i < answerButtons.length; i++) {
-        // Loop through questions array, using the index to access the questions
-        updateButton(answerButtons[i]);
-        // Access the event parameter to target the element
-        answerClick(answerButtons[i], i);
-    }
-}
+nextButton.addEventListener("click", nextQuestion);
 
-startButton.addEventListener('click', () => {
-    // Order matters, first make the changes to hidden elements on the page
-    question.innerText = questions[questionIndex].question;
-    showAnswers();
-
-    // Then change display of instructions
-    instructions.classList.add('d-none');
-    questionsBox.classList.remove('d-none');
+startButton.addEventListener("click", () => {
+    instructions.classList.add("d-none");
+    questionsBox.classList.remove("d-none");
+    renderQuestion();
 });
