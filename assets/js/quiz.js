@@ -74,6 +74,7 @@ const questions = [
     },
 ];
 //Third feature
+//Fourth feature
 
 // Declare constants
 const startButton = document.getElementById("startQuiz");
