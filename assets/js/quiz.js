@@ -54,7 +54,27 @@ const questions = [
             { answer: "Answer from array", correct: false },
         ],
     },
+    {
+        question: "This is question 4?",
+        answers: [
+            { answer: "Answer from array", correct: false },
+            { answer: "Answer from array t", correct: true },
+            { answer: "Answer from array", correct: false },
+            { answer: "Answer from array", correct: false },
+        ],
+    },
+    {
+        question: "This is question 4?",
+        answers: [
+            { answer: "Answer from array", correct: false },
+            { answer: "Answer from array t", correct: true },
+            { answer: "Answer from array", correct: false },
+            { answer: "Answer from array", correct: false },
+        ],
+    },
 ];
+//Third feature
+//Fourth feature
 
 // Declare constants
 const startButton = document.getElementById("startQuiz");
