@@ -150,6 +150,6 @@ startButton.addEventListener("click", () => {
     showAnswers();
 
     // Then change display of instructions
-    instructions.classList.add("d-none");
+    instructions.classList.add("d-md-none");
     questionsBox.classList.remove("d-none");
 });
